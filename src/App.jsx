@@ -112,6 +112,39 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
 };
 
 function App() {
+  const [formStatus, setFormStatus] = useState('idle');
+  
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    const formData = new FormData(e.target);
+    formData.append("access_key", "54bea58c-6255-4d4e-adfb-f30a421d2dc8");
+    formData.append("subject", "New Contact from Portfolio");
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      
+      if (data.success) {
+        setFormStatus('success');
+        e.target.reset();
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        console.error("Error submitting form", data);
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 5000);
+      }
+    } catch (err) {
+      console.error(err);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
+  };
+
   const videoRef = useRef(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -519,22 +552,26 @@ function App() {
               <div>
                 <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-16 uppercase text-luxury-gold">Reach Us</div>
               </div>
-              <form className="flex flex-col gap-12 md:gap-16 w-full">
+              <form onSubmit={handleFormSubmit} className="flex flex-col gap-12 md:gap-16 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
                   <div className="flex-1 flex flex-col gap-10">
-                    <div className="relative"><input id="firstName" placeholder="First Name *" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="text" /></div>
-                    <div className="relative"><input id="lastName" placeholder="Last Name" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="text" /></div>
-                    <div className="relative"><input id="email" placeholder="Email *" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="email" /></div>
+                    <div className="relative"><input id="firstName" name="firstName" required placeholder="First Name *" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="text" /></div>
+                    <div className="relative"><input id="lastName" name="lastName" placeholder="Last Name" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="text" /></div>
+                    <div className="relative"><input id="email" name="email" required placeholder="Email *" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="email" /></div>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <div className="relative h-full flex flex-col"><textarea id="message" placeholder="Type your message here *" className="w-full h-full min-h-[120px] bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium resize-none rounded-none disabled:opacity-50 text-white"></textarea></div>
+                    <div className="relative h-full flex flex-col"><textarea id="message" name="message" required placeholder="Type your message here *" className="w-full h-full min-h-[120px] bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium resize-none rounded-none disabled:opacity-50 text-white"></textarea></div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mt-4">
-                  <button className="group relative inline-flex items-center gap-4 text-xl md:text-2xl font-black uppercase tracking-tight hover:text-luxury-gold transition-colors disabled:opacity-50 text-white" type="submit">
-                    Send Message
+                  <button disabled={formStatus === 'submitting'} className="group relative inline-flex items-center gap-4 text-xl md:text-2xl font-black uppercase tracking-tight hover:text-luxury-gold transition-colors disabled:opacity-50 text-white" type="submit">
+                    {formStatus === 'submitting' ? 'Sending...' : formStatus === 'success' ? 'Message Sent!' : formStatus === 'error' ? 'Error, Try Again' : 'Send Message'}
                     <span className="w-12 h-12 rounded-full bg-luxury-gold flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-500">
-                      <svg className="w-5 h-5 translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                      {formStatus === 'success' ? (
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path></svg>
+                      ) : (
+                        <svg className="w-5 h-5 translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                      )}
                     </span>
                   </button>
                   <div className="flex gap-6">
