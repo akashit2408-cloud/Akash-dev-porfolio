@@ -514,33 +514,33 @@ function App() {
           <h1 className="text-[25vw] leading-[0.75] font-black text-luxury-ivory uppercase tracking-tighter select-none scale-y-[1.6] origin-top" style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}>Contact</h1>
         </motion.div>
         <div className="relative z-10 w-full flex justify-end items-end">
-          <div data-aos="fade-up" className="bg-luxury-gold backdrop-blur-xl border border-black/10 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.3),0_25px_50px_-12px_rgba(0,0,0,0.5)] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-black flex flex-col justify-between min-h-[600px] transition-all duration-500">
+          <div data-aos="fade-up" className="bg-luxury-card/90 backdrop-blur-xl border-t border-l border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 rounded-t-[2.5rem] md:rounded-tr-none md:rounded-tl-[4rem] text-white flex flex-col justify-between min-h-[600px] transition-all duration-500">
             <div className="w-full flex flex-col justify-between h-full" style={{ opacity: '1', transform: 'none' }}>
               <div>
-                <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">Reach Us</div>
+                <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-16 uppercase text-luxury-gold">Reach Us</div>
               </div>
               <form className="flex flex-col gap-12 md:gap-16 w-full">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
                   <div className="flex-1 flex flex-col gap-10">
-                    <div className="relative"><input id="firstName" placeholder="First Name *" className="w-full bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium rounded-none disabled:opacity-50 text-black" type="text" /></div>
-                    <div className="relative"><input id="lastName" placeholder="Last Name" className="w-full bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium rounded-none disabled:opacity-50 text-black" type="text" /></div>
-                    <div className="relative"><input id="email" placeholder="Email *" className="w-full bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium rounded-none disabled:opacity-50 text-black" type="email" /></div>
+                    <div className="relative"><input id="firstName" placeholder="First Name *" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="text" /></div>
+                    <div className="relative"><input id="lastName" placeholder="Last Name" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="text" /></div>
+                    <div className="relative"><input id="email" placeholder="Email *" className="w-full bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium rounded-none disabled:opacity-50 text-white" type="email" /></div>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <div className="relative h-full flex flex-col"><textarea id="message" placeholder="Type your message here *" className="w-full h-full min-h-[120px] bg-transparent border-b border-black/40 pb-3 text-lg focus:outline-none focus:border-black transition-colors placeholder-black/70 font-medium resize-none rounded-none disabled:opacity-50 text-black"></textarea></div>
+                    <div className="relative h-full flex flex-col"><textarea id="message" placeholder="Type your message here *" className="w-full h-full min-h-[120px] bg-transparent border-b border-white/20 pb-3 text-lg focus:outline-none focus:border-luxury-gold transition-colors placeholder-gray-500 font-medium resize-none rounded-none disabled:opacity-50 text-white"></textarea></div>
                   </div>
                 </div>
-                <div className="flex flex-col md:flex-row gap-12 mt-4">
-                  <div className="flex-1 flex items-start gap-4 text-sm font-medium text-black/90"><input id="permission" className="mt-1 w-4 h-4 rounded-sm border-black/40 bg-transparent text-black focus:ring-black focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer disabled:opacity-50" type="checkbox" style={{ accentColor: 'black' }} /><label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">I give permission to contact me at this email address.</label></div>
-                  <div className="flex-1 flex flex-col gap-8 text-xs text-black/70 font-medium">
-                    <p className="leading-relaxed max-w-[400px]">This site is protected by reCAPTCHA and the Google <a href="#" className="underline hover:text-black transition-colors">Privacy Policy</a> and <a href="#" className="underline hover:text-black transition-colors">Terms of Service</a> apply.</p>
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
-                      <p className="max-w-[250px] leading-relaxed">For information on how to unsubscribe, please review our <a href="#" className="underline hover:text-black transition-colors">privacy policy</a>.</p>
-                      <button type="submit" className="px-8 py-3 rounded-full border border-black/40 text-black font-bold flex items-center justify-center gap-3 hover:bg-black hover:text-luxury-gold transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50 disabled:cursor-not-allowed">
-                        Send
-                        <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                      </button>
-                    </div>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mt-4">
+                  <button className="group relative inline-flex items-center gap-4 text-xl md:text-2xl font-black uppercase tracking-tight hover:text-luxury-gold transition-colors disabled:opacity-50 text-white" type="submit">
+                    Send Message
+                    <span className="w-12 h-12 rounded-full bg-luxury-gold flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-500">
+                      <svg className="w-5 h-5 translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                  </button>
+                  <div className="flex gap-6">
+                    <a href="https://github.com/akashit2408-cloud" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-luxury-gold hover:text-white hover:border-luxury-gold transition-all duration-300">
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-3.975-1.395-.03-.075-.315-.825-.765-1.125-.345-.165-.825-.615-.015-.63.78-.015 1.335.72 1.515 1.02 .9 1.515 2.325 1.08 2.91.825.09-.645.345-1.08.63-1.32-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.36.315.675.915.675 1.845 0 1.335-.015 2.415-.015 2.745 0 .33.225.705.84.57A12.015 12.015 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>
+                    </a>
                   </div>
                 </div>
               </form>
