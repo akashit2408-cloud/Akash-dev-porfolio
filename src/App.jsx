@@ -100,7 +100,7 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
             ))}
           </div>
           {exp.github && (
-            <a href={exp.github} target="_blank" rel="noopener noreferrer" className={`self-start inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors duration-700 ${f ? 'bg-luxury-ivory text-luxury-bg hover:bg-gray-200' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+            <a href={exp.github} target="_blank" rel="noopener noreferrer" className={`self-center inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors duration-700 ${f ? 'bg-luxury-ivory text-luxury-bg hover:bg-gray-200' : 'bg-white/10 text-white hover:bg-white/20'}`}>
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-3.975-1.395-.03-.075-.315-.825-.765-1.125-.345-.165-.825-.615-.015-.63.78-.015 1.335.72 1.515 1.02 .9 1.515 2.325 1.08 2.91.825.09-.645.345-1.08.63-1.32-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.36.315.675.915.675 1.845 0 1.335-.015 2.415-.015 2.745 0 .33.225.705.84.57A12.015 12.015 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               View on GitHub
             </a>
