@@ -319,7 +319,7 @@ function App() {
                   <div className="w-8 h-2 bg-luxury-bg/30 rounded-full shadow-inner"></div>
                 </div>
                 <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-luxury-card border border-gray-700 mb-3">
-                  <img alt="Profile" className="w-full h-full object-cover" src="./assets/mypicture.png" />
+                  <img alt="Profile" className="w-full h-full object-cover grayscale contrast-125" src="./assets/mypicture.png" />
                 </div>
                 <div className="flex flex-col gap-1 border-t border-white/10 pt-2 opacity-90">
                   <p className="font-bold text-luxury-gold text-[11px] uppercase">AKASH B</p>
