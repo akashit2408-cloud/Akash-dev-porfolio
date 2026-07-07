@@ -77,7 +77,7 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
   });
 
   return (
-    <div ref={d} data-aos={exp.aosType} data-aos-delay={exp.aosDelay} className={`w-80 sm:w-96 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${f ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(212,175,55,0.3)]' : 'bg-[#1a1a1a] border border-white/5 shadow-lg'}`}>
+    <div ref={d} data-aos={exp.aosType} data-aos-delay={exp.aosDelay} className={`w-80 sm:w-96 mx-auto mb-8 md:mb-0 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${f ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(212,175,55,0.3)]' : 'bg-[#1a1a1a] border border-white/5 shadow-lg'}`}>
       <div className={`w-5 h-5 bg-gradient-to-br from-gray-300 to-gray-100 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] absolute top-4 border border-gray-300 z-10 flex items-center justify-center`}>
         <div className={`w-2 h-2 rounded-full ${f ? 'bg-luxury-gold' : 'bg-gray-600'}`}></div>
       </div>
@@ -91,8 +91,8 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
         <ul className={`text-xs leading-relaxed font-medium mb-5 list-disc pl-4 flex-grow flex flex-col gap-2 transition-colors duration-700 ${f ? 'text-white/90' : 'text-gray-400'}`}>
           {exp.details.map((e, t) => <li key={t}>{e}</li>)}
         </ul>
-        <div className="flex flex-col gap-3 mt-auto pt-3 border-t border-dashed border-gray-300/40">
-          <div className="flex flex-wrap gap-1">
+        <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-dashed border-gray-300/40">
+          <div className="flex flex-wrap justify-center gap-2">
             {exp.tags.map((e, t) => (
               <span key={t} className={`text-[9px] font-bold px-2.5 py-1 rounded transition-colors duration-700 ${f ? 'bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/30' : 'bg-white/5 text-gray-400 border border-white/10'}`}>
                 {e}
