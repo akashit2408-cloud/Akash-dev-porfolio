@@ -226,7 +226,7 @@ function App() {
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#050505]/80 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <a href="#" className="text-luxury-ivory text-2xl font-black tracking-tight whitespace-nowrap uppercase">AKASH B</a>
+            <a href="#" className={`text-luxury-ivory text-2xl font-black tracking-tight whitespace-nowrap uppercase transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>AKASH B</a>
           </div>
           <div className="hidden lg:flex space-x-8 flex-shrink-0">
             <a href="#home" className="text-luxury-ivory/80 hover:text-luxury-ivory font-medium relative group transition-colors duration-300 whitespace-nowrap">Home<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all duration-300 group-hover:w-full"></span></a>
