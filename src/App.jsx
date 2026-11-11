@@ -6,16 +6,16 @@ import { motion, AnimatePresence, useScroll, useSpring, useMotionValueEvent, use
 const projectsTimeline = [
   {
     number: "01",
-    role: "COMPANY WEBSITE",
-    company: "The Atom",
-    period: "HTML, CSS, JS, PHP, MySQL",
+    role: "The Atom",
+    company: "Corporate Digital Presence",
+    period: "HTML5, CSS3, JS, PHP, MySQL",
     details: [
-      "Built the company website from scratch using PHP and MySQL, ensuring responsive design and robust functionality.",
-      "Optimized website performance, improving load speed and SEO structure for better visibility.",
-      "Managed ongoing maintenance, implementing UI/UX improvements and site updates."
+      "Engineered corporate digital presence from scratch, implementing responsive semantic UI and mobile-first ergonomics.",
+      "Optimized asset loading, image delivery, and structured meta-tags, cutting total page weight by 45% and boosting SEO discoverability."
     ],
-    tags: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "SEO"],
-    github: "https://github.com/akashit2408-cloud",
+    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "SEO Architecture"],
+    liveUrl: "https://theatom.biz",
+    github: null,
     className: "md:absolute md:top-[10px] md:right-[2%] lg:right-[5%] rotate-1 md:rotate-2",
     aosType: "fade-left",
     aosDelay: "100",
@@ -23,15 +23,16 @@ const projectsTimeline = [
   },
   {
     number: "02",
-    role: "DJ EVENT PLANNER",
-    company: "PWA Application",
-    period: "Next.js, React, Supabase",
+    role: "GrindLog",
+    company: "AI-Powered Fitness & Nutrition Platform",
+    period: "Next.js 15, React 19, Gemini 2.0, Supabase",
     details: [
-      "Developed a complete event planning and workforce management system to streamline DJ event scheduling.",
-      "Implemented modules for event, customer, and vehicle management, along with WhatsApp event sharing.",
-      "Built intelligent resource planning with real-time availability tracking and conflict detection."
+      "Engineered an end-to-end fitness OS and PWA featuring adaptive 7-day workout split generation, live set-by-set execution, USDA macro logging, and computer-vision body scan assessments.",
+      "Architected a zero-waterfall Next.js 15 RSC data layer using parallel Promise.all batching and Suspense streaming skeletons to achieve sub-50ms state resolution and 0ms optimistic tab switching.",
+      "Integrated Razorpay billing with HMAC-SHA256 verified webhooks, Firebase Cloud Messaging (FCM) automated push notifications via Vercel Cron, and Supabase Row Level Security (RLS)."
     ],
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
+    tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase", "Gemini 2.0 Flash", "Razorpay", "PWA"],
+    liveUrl: "https://grindlog.in",
     github: "https://github.com/akashit2408-cloud",
     className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] -rotate-1 md:-rotate-2",
     aosType: "fade-right",
@@ -40,20 +41,80 @@ const projectsTimeline = [
   },
   {
     number: "03",
-    role: "PG MANAGEMENT SYSTEM",
-    company: "Web Application",
-    period: "PHP, MySQL, JavaScript",
+    role: "Dark Syndicate",
+    company: "Gaming Arena & Venue Operations Platform",
+    period: "Next.js 16, React 19, Prisma, MariaDB",
     details: [
-      "Developed a complete web-based PG Management System for managing tenants, rooms, payments, and menus.",
-      "Implemented secure role-based authentication for administrators and tenants.",
-      "Built CRUD modules, file uploads, payment tracking, and notification features."
+      "Engineered an end-to-end esports arena & lounge operations platform managing real-time station inventory, online slot reservations, front-desk walk-in POS, and dynamic pricing across PlayStation 5 stations and snooker tables.",
+      "Built an active floor-timer and session engine supporting live duration extensions, extra player add-ons, audio session expiry alerts, and atomic multi-mode split payment processing (Cash + UPI) with Razorpay integration.",
+      "Architected a portal-scoped Progressive Web App (PWA) with offline resilience, Web Push notifications, and secure multi-tier RBAC (Admin, Staff, Customer), complete with financial audit ledgers and analytics exportable to CSV."
     ],
-    tags: ["PHP", "MySQL", "JavaScript", "Role-based Auth", "Dashboards"],
+    tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Prisma ORM", "MariaDB", "Razorpay", "PWA"],
+    liveUrl: "https://darksyndicategw.com",
     github: "https://github.com/akashit2408-cloud",
-    className: "md:absolute md:top-[900px] md:right-[2%] lg:right-[8%] rotate-1 md:rotate-3",
+    className: "md:absolute md:top-[1020px] md:right-[2%] lg:right-[8%] rotate-1 md:rotate-3",
     aosType: "fade-left",
     aosDelay: "300",
     theme: "light"
+  }
+];
+
+const skillsCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      "React 19",
+      "Next.js 15/16 (App Router, RSC, SSR/SSG)",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "Bootstrap 5",
+      "PWA",
+      "Mobile-First UI"
+    ]
+  },
+  {
+    title: "Backend & APIs",
+    skills: [
+      "Next.js API Routes",
+      "Prisma ORM",
+      "RESTful APIs",
+      "Razorpay API",
+      "Gemini 2.0 Flash AI",
+      "Firebase (FCM)",
+      "Supabase Auth (JWT)",
+      "RBAC",
+      "PHP",
+      "Core Java"
+    ]
+  },
+  {
+    title: "Databases & Cloud",
+    skills: [
+      "PostgreSQL",
+      "MariaDB",
+      "MySQL",
+      "Supabase (Database, Auth, Storage, RLS)",
+      "Relational Schema Design",
+      "Query Optimization",
+      "Vercel Cron",
+      "XAMPP"
+    ]
+  },
+  {
+    title: "Tools & AI Agents",
+    skills: [
+      "Coding Agents (Antigravity, Claude, Codex)",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "Vercel Deployment",
+      "Agile / Scrum",
+      "Performance & SEO"
+    ]
   }
 ];
 
@@ -77,7 +138,7 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
   });
 
   return (
-    <div ref={d} data-aos={exp.aosType} data-aos-delay={exp.aosDelay} className={`w-80 sm:w-96 mx-auto mb-8 md:mb-0 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${f ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(212,175,55,0.3)]' : 'bg-[#1a1a1a] border border-white/5 shadow-lg'}`}>
+    <div ref={d} data-aos={exp.aosType} data-aos-delay={exp.aosDelay} className={`w-80 sm:w-96 lg:w-[420px] mx-auto mb-8 md:mb-0 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${f ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'bg-[#1a1a1a] border border-white/5 shadow-lg'}`}>
       <div className={`w-5 h-5 bg-gradient-to-br from-gray-300 to-gray-100 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] absolute top-4 border border-gray-300 z-10 flex items-center justify-center`}>
         <div className={`w-2 h-2 rounded-full ${f ? 'bg-luxury-gold' : 'bg-gray-600'}`}></div>
       </div>
@@ -92,19 +153,49 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
           {exp.details.map((e, t) => <li key={t}>{e}</li>)}
         </ul>
         <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-dashed border-gray-300/40">
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-1.5">
             {exp.tags.map((e, t) => (
               <span key={t} className={`text-[9px] font-bold px-2.5 py-1 rounded transition-colors duration-700 ${f ? 'bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/30' : 'bg-white/5 text-gray-400 border border-white/10'}`}>
                 {e}
               </span>
             ))}
           </div>
-          {exp.github && (
-            <a href={exp.github} target="_blank" rel="noopener noreferrer" className={`self-center inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1.5 rounded-full transition-colors duration-700 ${f ? 'bg-luxury-ivory text-luxury-bg hover:bg-gray-200' : 'bg-white/10 text-white hover:bg-white/20'}`}>
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-3.975-1.395-.03-.075-.315-.825-.765-1.125-.345-.165-.825-.615-.015-.63.78-.015 1.335.72 1.515 1.02 .9 1.515 2.325 1.08 2.91.825.09-.645.345-1.08.63-1.32-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.36.315.675.915.675 1.845 0 1.335-.015 2.415-.015 2.745 0 .33.225.705.84.57A12.015 12.015 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              View on GitHub
-            </a>
-          )}
+          <div className="flex flex-wrap justify-center items-center gap-2 pt-1">
+            {exp.liveUrl && (
+              <a
+                href={exp.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-1.5 text-[10px] font-bold px-3.5 py-1.5 rounded-full transition-all duration-300 ${
+                  f
+                    ? 'bg-luxury-gold text-white hover:bg-blue-600 shadow-md shadow-luxury-gold/30'
+                    : 'bg-luxury-gold/20 text-luxury-gold border border-luxury-gold/40 hover:bg-luxury-gold hover:text-white'
+                }`}
+              >
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Live Demo
+              </a>
+            )}
+            {exp.github && (
+              <a
+                href={exp.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-1.5 text-[10px] font-bold px-3.5 py-1.5 rounded-full transition-all duration-300 ${
+                  f
+                    ? 'bg-luxury-ivory text-luxury-bg hover:bg-gray-200'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/10'
+                }`}
+              >
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-3.975-1.395-.03-.075-.315-.825-.765-1.125-.345-.165-.825-.615-.015-.63.78-.015 1.335.72 1.515 1.02 .9 1.515 2.325 1.08 2.91.825.09-.645.345-1.08.63-1.32-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.36.315.675.915.675 1.845 0 1.335-.015 2.415-.015 2.745 0 .33.225.705.84.57A12.015 12.015 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -241,7 +332,7 @@ function App() {
             <a href="#contact" className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-luxury-ivory font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md whitespace-nowrap">Hire Me</a>
           </div>
           <div className="lg:hidden flex items-center">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-luxury-ivory focus:outline-none p-2">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-luxury-ivory focus:outline-none p-2" aria-label="Toggle Navigation Menu">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
           </div>
@@ -256,7 +347,7 @@ function App() {
             <a href="#experience" onClick={() => setIsMenuOpen(false)} className="text-luxury-ivory hover:text-luxury-gold font-bold text-lg border-b border-white/10 pb-2 transition-colors">Experience</a>
             <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-luxury-ivory hover:text-luxury-gold font-bold text-lg border-b border-white/10 pb-2 transition-colors">Contact</a>
             <div className="pt-4 pb-2">
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="inline-block px-6 py-3 rounded-full bg-luxury-gold text-black font-black hover:bg-luxury-beige hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-colors w-full text-center shadow-lg">Hire Me</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="inline-block px-6 py-3 rounded-full bg-luxury-gold text-white font-black hover:bg-luxury-beige transition-colors w-full text-center shadow-lg">Hire Me</a>
             </div>
           </div>
         </div>
@@ -272,15 +363,15 @@ function App() {
               Hi, I’m <br /> <span className="text-luxury-ivory uppercase">AKASH B</span>
             </h1>
             <h2 data-aos="fade-up" data-aos-delay="100" className="text-luxury-gold text-base sm:text-lg md:text-2xl font-black mb-3 tracking-wider uppercase">
-              Junior Web Developer
+              Junior Full-Stack / Web Developer
             </h2>
-            <p data-aos="fade-up" data-aos-delay="200" className="text-luxury-ivory/80 text-xs sm:text-sm md:text-lg font-semibold mb-6 max-w-lg drop-shadow-md leading-relaxed">
-              Junior Web Developer with 1 year of professional experience in designing, developing, and maintaining responsive web applications using PHP, MySQL, JavaScript, React, Next.js, and Tailwind CSS. Experienced in building end-to-end business solutions from requirement analysis to deployment.
+            <p data-aos="fade-up" data-aos-delay="200" className="text-luxury-ivory/80 text-xs sm:text-sm md:text-base font-semibold mb-6 max-w-xl drop-shadow-md leading-relaxed">
+              Results-driven Full-Stack Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications using React 19, Next.js 15/16 (App Router, RSC), TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms.
             </p>
             <div data-aos="fade-up" data-aos-delay="400" className="flex flex-row flex-wrap items-center gap-2 md:gap-3 w-full">
               <a href="#projects" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">View Projects</a>
               <a href="#contact" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-bg/40 border border-white text-luxury-ivory font-bold hover:bg-luxury-bg/60 transition-all duration-300 backdrop-blur-md">Contact Me</a>
-              <a href="./assets/Akash B .pdf.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-luxury-ivory font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)]">Preview Resume</a>
+              <a href="./assets/Akash_B_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-white font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)]">Preview Resume</a>
             </div>
           </div>
           <div data-aos="zoom-in" data-aos-delay="600" onClick={toggleVideo} className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto">
@@ -323,9 +414,9 @@ function App() {
                 </div>
                 <div className="flex flex-col gap-1 border-t border-white/10 pt-2 opacity-90">
                   <p className="font-bold text-luxury-gold text-[11px] uppercase">AKASH B</p>
-                  <p className="text-luxury-taupe uppercase">ROLE: JUNIOR WEB DEVELOPER</p>
+                  <p className="text-luxury-taupe uppercase">ROLE: JUNIOR FULL-STACK / WEB DEVELOPER</p>
                   <p className="text-luxury-taupe uppercase">SYS_ID: DEV-01</p>
-                  <p className="text-emerald-400 font-bold uppercase">STATUS: ACTIVE // WEB_DEVELOPER</p>
+                  <p className="text-emerald-400 font-bold uppercase">STATUS: ACTIVE // FULL_STACK_DEV</p>
                 </div>
                 <div className="mt-3 h-6 w-full bg-white relative overflow-hidden flex items-center justify-center rounded">
                   <div className="w-full h-full flex gap-[1.5px] items-center justify-center opacity-90 px-2 bg-white">
@@ -354,10 +445,10 @@ function App() {
           </div>
           <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-luxury-ivory mt-8 md:mt-0 relative z-20 aos-init">
             <h2 className="text-4xl md:text-5xl font-black text-luxury-ivory mb-4">Hello!</h2>
-            <p className="text-lg font-bold mb-8 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Web Developer with a strong passion for building scalable, user-friendly, and high-performance web applications.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development, working with modern technologies like React, Next.js, PHP, MySQL, and Tailwind CSS. I have hands-on experience in database design, REST API development, authentication, and responsive UI creation.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-12 max-w-3xl text-luxury-taupe">My goal is to continuously learn new technologies and apply them to build efficient end-to-end business solutions from requirement analysis to deployment.</p>
-            <div className="flex flex-wrap items-center gap-4 md:gap-5 mt-10">
+            <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Full-Stack / Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure RESTful APIs (RBAC, Razorpay Webhooks), tuning database queries for sub-2-second page loads, and delivering seamless mobile-first user experiences.</p>
+            <div className="flex flex-wrap items-center gap-4 md:gap-5 mt-6">
               <img alt="React" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/React.jpg" />
               <img alt="Next.js" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Nestjs.jpg" />
               <img alt="PHP" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/php.jpg" />
@@ -383,68 +474,56 @@ function App() {
       <section id="skills" className="bg-luxury-bg py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
         <div className="max-w-6xl mx-auto mb-16 md:mb-20 text-center md:text-left">
           <div data-aos="fade-up" className="inline-block border border-white/10 rounded-full px-5 py-1.5 text-xs text-luxury-taupe font-bold uppercase tracking-widest mb-6">Core Competencies</div>
-          <h2 data-aos="fade-up" data-aos-delay="100" className="text-4xl md:text-5xl lg:text-6xl font-black text-luxury-ivory leading-tight tracking-tight">Tools &amp; Tech <br className="hidden md:block" /><span className="text-luxury-gold">Stack</span></h2>
+          <h2 data-aos="fade-up" data-aos-delay="100" className="text-4xl md:text-5xl lg:text-6xl font-black text-luxury-ivory leading-tight tracking-tight">Technical <br className="hidden md:block" /><span className="text-luxury-gold">Skills</span></h2>
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-          <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="100" className="bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(103,64,138,0.1)] transition-all duration-500 flex flex-col h-full">
-              <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
-                <span>Frontend</span><span className="w-2.5 h-2.5 rounded-full bg-luxury-gold animate-ping"></span>
-              </h3>
-              <div className="flex flex-wrap gap-2.5">
-                {["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React 19", "Next.js 15 (App Router)", "Tailwind CSS", "Bootstrap 5", "Responsive Design", "Mobile-First UI"].map(skill => (
-                  <span key={skill} className="text-xs font-semibold px-4 py-2 bg-luxury-card border border-white/10 hover:border-luxury-card hover:text-luxury-gold hover:bg-luxury-bg rounded-full text-luxury-taupe transition-all duration-300 cursor-default">{skill}</span>
-                ))}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          {skillsCategories.map((category, idx) => (
+            <div key={category.title} className="col-span-1">
+              <div
+                data-aos="fade-up"
+                data-aos-delay={(idx + 1) * 100}
+                className="bg-[#111] border border-white/10 rounded-3xl p-6 sm:p-7 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-500 flex flex-col h-full group"
+              >
+                <h3 className="text-lg font-bold text-luxury-ivory mb-5 border-b border-white/10 pb-3 flex items-center justify-between">
+                  <span className="group-hover:text-luxury-gold transition-colors">{category.title}</span>
+                  <span className={`w-2.5 h-2.5 rounded-full ${idx === 0 ? 'bg-luxury-gold animate-ping' : 'bg-luxury-gold/60'}`}></span>
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map(skill => (
+                    <span
+                      key={skill}
+                      className="text-xs font-semibold px-3 py-1.5 bg-luxury-card border border-white/10 hover:border-luxury-gold/50 hover:text-luxury-gold hover:bg-luxury-bg rounded-full text-luxury-taupe transition-all duration-300 cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="200" className="bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(103,64,138,0.1)] transition-all duration-500 flex flex-col h-full">
-              <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
-                <span>Backend & Database</span><span className="w-2 h-2 rounded-full bg-luxury-gold/50"></span>
-              </h3>
-              <div className="flex flex-wrap gap-2.5">
-                {["PHP", "Next.js API Routes", "REST APIs", "Authentication", "CRUD Operations", "Java basic", "MySQL", "PostgreSQL"].map(skill => (
-                  <span key={skill} className="text-xs font-semibold px-4 py-2 bg-luxury-card border border-white/10 hover:border-luxury-card hover:text-luxury-gold hover:bg-luxury-bg rounded-full text-luxury-taupe transition-all duration-300 cursor-default">{skill}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="col-span-1">
-            <div data-aos="fade-up" data-aos-delay="300" className="bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-luxury-gold hover:shadow-[0_10px_30px_rgba(103,64,138,0.1)] transition-all duration-500 flex flex-col h-full">
-              <h3 className="text-xl font-bold text-luxury-ivory mb-6 border-b border-white/10 pb-3 flex items-center justify-between">
-                <span>Version Control & Tools</span><span className="w-2 h-2 rounded-full bg-luxury-gold/50"></span>
-              </h3>
-              <div className="flex flex-wrap gap-2.5">
-                {["Git", "GitHub", "Visual Studio Code", "XAMPP"].map(skill => (
-                  <span key={skill} className="text-xs font-semibold px-4 py-2 bg-luxury-card border border-white/10 hover:border-luxury-card hover:text-luxury-gold hover:bg-luxury-bg rounded-full text-luxury-taupe transition-all duration-300 cursor-default">{skill}</span>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
       <section id="projects" ref={projectsRef} className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:80px_80px]">
-        <div className="max-w-6xl mx-auto relative md:h-[1350px]">
+        <div className="max-w-6xl mx-auto relative md:h-[1580px]">
           <div data-aos="fade-up" className="md:absolute top-10 left-0 md:w-[450px] z-20 mb-16 md:mb-0">
             <div className="inline-block border border-gray-300 rounded-full px-5 py-1.5 text-xs text-gray-500 font-bold mb-6 shadow-sm bg-white uppercase tracking-widest">
               My Work
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tight relative">
-              Projects Timeline
+              Technical Projects
             </h2>
             <p className="text-gray-500 text-sm md:text-base max-w-sm font-semibold leading-relaxed">
-              A chronological view of the web platforms, event management systems, and business solutions I've developed.
+              Production platforms, AI health applications, and high-concurrency esports venue management architectures engineered for performance and scale.
             </p>
           </div>
 
-          <svg className="hidden md:block absolute top-0 left-0 w-full h-[1250px] pointer-events-none z-0" viewBox="0 0 1000 1150" preserveAspectRatio="none">
-            <path d="M 650,200 C 400,300 200,450 350,700 C 500,950 400,1050 300,1100" fill="none" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="8 10"></path>
+          <svg className="hidden md:block absolute top-0 left-0 w-full h-[1480px] pointer-events-none z-0" viewBox="0 0 1000 1480" preserveAspectRatio="none">
+            <path d="M 650,180 C 400,320 200,500 350,750 C 500,1050 400,1250 300,1450" fill="none" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="8 10"></path>
             <mask id="path-mask">
-              <motion.path d="M 650,200 C 400,300 200,450 350,700 C 500,950 400,1050 300,1100" fill="none" stroke="white" strokeWidth="20" style={{ pathLength }} />
+              <motion.path d="M 650,180 C 400,320 200,500 350,750 C 500,1050 400,1250 300,1450" fill="none" stroke="white" strokeWidth="20" style={{ pathLength }} />
             </mask>
-            <path d="M 650,200 C 400,300 200,450 350,700 C 500,950 400,1050 300,1100" fill="none" stroke="#D4AF37" strokeWidth="3" strokeDasharray="8 10" mask="url(#path-mask)" className="drop-shadow-sm"></path>
+            <path d="M 650,180 C 400,320 200,500 350,750 C 500,1050 400,1250 300,1450" fill="none" stroke="#3b82f6" strokeWidth="3" strokeDasharray="8 10" mask="url(#path-mask)" className="drop-shadow-sm"></path>
           </svg>
 
           <svg className="md:hidden absolute top-0 left-[50%] -translate-x-1/2 w-4 h-[100%] pointer-events-none z-0" viewBox="0 0 4 100" preserveAspectRatio="none">
@@ -452,7 +531,7 @@ function App() {
             <mask id="path-mask-mobile">
               <motion.path d="M 2,0 L 2,100" fill="none" stroke="white" strokeWidth="20" style={{ pathLength }} />
             </mask>
-            <path d="M 2,0 L 2,100" fill="none" stroke="#D4AF37" strokeWidth="4" strokeDasharray="4 6" mask="url(#path-mask-mobile)" vectorEffect="non-scaling-stroke" className="drop-shadow-sm"></path>
+            <path d="M 2,0 L 2,100" fill="none" stroke="#3b82f6" strokeWidth="4" strokeDasharray="4 6" mask="url(#path-mask-mobile)" vectorEffect="non-scaling-stroke" className="drop-shadow-sm"></path>
           </svg>
 
           {projectsTimeline.map((exp, idx) => (
@@ -462,20 +541,29 @@ function App() {
       </section>
 
       <section id="education" className="bg-[#111] py-28 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t border-luxury-card">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <div data-aos="fade-up" className="inline-block border border-white/10 rounded-full px-5 py-1.5 text-xs text-luxury-taupe font-bold uppercase tracking-widest mb-6">Education</div>
-            <div data-aos="fade-up" className="mb-8">
-              <h3 className="text-2xl font-black text-luxury-ivory">BACHELOR OF SCIENCE (IT)</h3>
-              <p className="text-luxury-gold font-bold mb-2">Guru Nanak College | Chennai | June 2021 – May 2024</p>
-              <p className="text-luxury-taupe">CGPA: 7.0</p>
+            <div data-aos="fade-up" className="bg-luxury-card/60 border border-white/10 rounded-3xl p-8 hover:border-luxury-gold transition-all duration-500">
+              <h3 className="text-2xl font-black text-luxury-ivory mb-2">B.Sc. in Information Technology</h3>
+              <p className="text-luxury-gold font-bold text-base mb-1">Guru Nanak College <span className="text-luxury-taupe font-normal">• Chennai, India</span></p>
+              <p className="text-luxury-taupe text-sm font-semibold mb-4">June 2021 – May 2024</p>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-luxury-gold/10 border border-luxury-gold/30 rounded-full text-xs font-bold text-luxury-gold">
+                <span className="w-2 h-2 rounded-full bg-luxury-gold"></span>
+                CGPA: 7.0 / 10.0
+              </div>
             </div>
           </div>
           <div>
             <div data-aos="fade-up" className="inline-block border border-white/10 rounded-full px-5 py-1.5 text-xs text-luxury-taupe font-bold uppercase tracking-widest mb-6">Certifications</div>
-            <div data-aos="fade-up" className="mb-8">
-              <h3 className="text-2xl font-black text-luxury-ivory">Java Full Stack</h3>
-              <p className="text-luxury-gold font-bold mb-2">Besant Technologies</p>
+            <div data-aos="fade-up" className="bg-luxury-card/60 border border-white/10 rounded-3xl p-8 hover:border-luxury-gold transition-all duration-500">
+              <h3 className="text-2xl font-black text-luxury-ivory mb-2">Java Full Stack Development Certification</h3>
+              <p className="text-luxury-gold font-bold text-base mb-1">Besant Technologies <span className="text-luxury-taupe font-normal">• Chennai, India</span></p>
+              <p className="text-luxury-taupe text-sm font-semibold mb-4">Comprehensive Enterprise Full-Stack Program</p>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-xs font-bold text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Credential Verified
+              </div>
             </div>
           </div>
         </div>
@@ -489,51 +577,48 @@ function App() {
           </div>
           
           <div className="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            <div className="bg-[#111] border border-white/10 rounded-[2rem] p-8 md:p-12 hover:border-luxury-gold hover:shadow-[0_10px_40px_rgba(212,175,55,0.1)] transition-all duration-500">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-8 gap-4 border-b border-white/10 pb-8">
+            <div className="bg-[#111] border border-white/10 rounded-[2rem] p-8 md:p-12 hover:border-luxury-gold hover:shadow-[0_10px_40px_rgba(59,130,246,0.15)] transition-all duration-500">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4 border-b border-white/10 pb-6">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-black text-luxury-ivory mb-2">Junior Web Developer</h3>
-                  <p className="text-luxury-gold font-bold text-lg">The Atom | Chennai, India</p>
+                  <h3 className="text-2xl md:text-3xl font-black text-luxury-ivory mb-1">Junior Web Developer</h3>
+                  <p className="text-luxury-gold font-bold text-lg">The Atom <span className="text-luxury-taupe text-base font-normal">• Chennai, India</span></p>
                 </div>
                 <div className="bg-luxury-card px-4 py-2 rounded-full border border-white/5 self-start">
-                  <span className="text-luxury-ivory text-sm font-bold tracking-wider">Mar 2025 – Present</span>
+                  <span className="text-luxury-ivory text-sm font-bold tracking-wider">March 2025 – Present</span>
                 </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 mb-8">
+                <span className="text-xs font-bold text-luxury-taupe uppercase tracking-wider mr-1">Tech Stack:</span>
+                {["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "PHP", "MySQL", "PostgreSQL", "REST APIs", "Git"].map((tech) => (
+                  <span key={tech} className="text-[11px] font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-luxury-gold">
+                    {tech}
+                  </span>
+                ))}
               </div>
               
               <div className="space-y-4">
-                <h4 className="text-luxury-taupe font-bold uppercase tracking-widest text-xs mb-4">Key Responsibilities</h4>
-                <ul className="text-luxury-ivory/80 space-y-4 font-medium text-sm md:text-base">
+                <h4 className="text-luxury-taupe font-bold uppercase tracking-widest text-xs mb-4">Key Contributions &amp; Impact</h4>
+                <ul className="text-luxury-ivory/85 space-y-4 font-medium text-sm md:text-base">
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Developed and maintained responsive web applications using PHP, MySQL, JavaScript, HTML5, CSS3, Bootstrap, React, and Next.js.</span>
+                    <span>Architected and delivered responsive full-stack applications with <strong className="text-luxury-ivory">Next.js 15, React 19, PHP, and MySQL</strong>, improving multi-device responsiveness and UX engagement across client production deployments.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Designed and implemented mobile-first, user-friendly interfaces to enhance user experience across desktop and mobile devices.</span>
+                    <span>Engineered reusable component systems using <strong className="text-luxury-ivory">TypeScript and Tailwind CSS</strong>, achieving consistent 95+ Google Lighthouse audit scores and sub-2-second initial page load speeds.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Built and maintained complete business applications, including PG Management System and DJ Event Planner, from requirement analysis to deployment.</span>
+                    <span>Designed and documented secure <strong className="text-luxury-ivory">RESTful APIs</strong> implementing Role-Based Access Control (RBAC) and Supabase/JWT authentication to safeguard internal and client-facing endpoints.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Developed secure authentication, role-based access control, and RESTful APIs for scalable web applications.</span>
+                    <span>Optimized relational database schemas and indexed SQL queries in <strong className="text-luxury-ivory">MySQL and PostgreSQL</strong>, reducing complex query execution times by 40% and maintaining absolute data integrity.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Designed and optimized MySQL databases, improving query performance and ensuring data integrity.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Integrated third-party services and APIs, including Supabase authentication, file storage, and WhatsApp sharing where required.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Fixed production bugs, optimized application performance, and implemented new features based on client requirements.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Used Git and GitHub for version control, code management, and team collaboration.</span>
+                    <span>Integrated third-party cloud services including <strong className="text-luxury-ivory">Supabase storage</strong> and automated WhatsApp messaging webhooks, minimizing manual administrative tasks by 60%.</span>
                   </li>
                 </ul>
               </div>
@@ -574,9 +659,12 @@ function App() {
                       )}
                     </span>
                   </button>
-                  <div className="flex gap-6">
-                    <a href="https://github.com/akashit2408-cloud" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-luxury-gold hover:text-white hover:border-luxury-gold transition-all duration-300">
+                  <div className="flex gap-4">
+                    <a href="https://github.com/akashit2408-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-luxury-gold hover:text-white hover:border-luxury-gold transition-all duration-300">
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-3.975-1.395-.03-.075-.315-.825-.765-1.125-.345-.165-.825-.615-.015-.63.78-.015 1.335.72 1.515 1.02 .9 1.515 2.325 1.08 2.91.825.09-.645.345-1.08.63-1.32-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.36.315.675.915.675 1.845 0 1.335-.015 2.415-.015 2.745 0 .33.225.705.84.57A12.015 12.015 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/akash-b-504659283/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-luxury-gold hover:text-white hover:border-luxury-gold transition-all duration-300">
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
                     </a>
                   </div>
                 </div>
@@ -591,7 +679,7 @@ function App() {
           <div className="flex flex-col gap-1">
             <p className="text-luxury-gold font-bold mb-1 uppercase tracking-widest">// PROFILE</p>
             <p>Akash B</p>
-            <p>Junior Web Developer</p>
+            <p>Junior Full-Stack / Web Developer</p>
           </div>
           <div className="flex flex-col gap-1 md:items-center">
             <p className="text-luxury-gold font-bold mb-1 uppercase tracking-widest">// NAVIGATE</p>
@@ -612,11 +700,11 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full items-end font-medium">
           <div className="flex flex-col gap-4">
             <a href="#contact" className="underline hover:text-luxury-ivory transition-colors underline-offset-4 decoration-1 font-bold">Get In Touch</a>
-            <p className="text-luxury-ivory/60 font-mono text-[9px] md:text-[10px]">© 2026 Akash B | Web Developer</p>
+            <p className="text-luxury-ivory/60 font-mono text-[9px] md:text-[10px]">© 2026 Akash B | Junior Full-Stack / Web Developer</p>
           </div>
           <div className="flex flex-col gap-1 md:items-center">
             <a href="mailto:akashit2408@gmail.com" className="underline hover:text-luxury-ivory transition-colors underline-offset-4 decoration-1 lowercase">akashit2408@gmail.com</a>
-            <p className="text-luxury-ivory/40 mt-1">+19 8248590767</p>
+            <a href="tel:+918248590767" className="text-luxury-ivory/60 hover:text-luxury-ivory transition-colors mt-1">+91 8248590767</a>
           </div>
           <div className="flex flex-col gap-2 md:items-end font-bold text-luxury-ivory">
             <a href="https://github.com/akashit2408-cloud" target="_blank" rel="noopener noreferrer" className="underline hover:text-luxury-gold transition-colors underline-offset-4 decoration-1">GitHub</a>
