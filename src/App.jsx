@@ -451,19 +451,41 @@ function App() {
             <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Full-Stack / Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications.</p>
             <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (OpenAI, Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
             <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure RESTful APIs (RBAC, Razorpay Webhooks), automating CI/CD workflows, tuning database queries for fast page loads, and delivering seamless mobile-first user experiences.</p>
-            <div className="flex flex-wrap items-center gap-4 md:gap-5 mt-6">
-              <img alt="React" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/React.jpg" />
-              <img alt="Next.js" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Nestjs.jpg" />
-              <img alt="PHP" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/php.jpg" />
-              <img alt="MySQL" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/MySql.jpg" />
-              <img alt="Tailwind CSS" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Tailwind.jpg" />
-              <img alt="TypeScript" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Typescript.jpg" />
-              <img alt="HTML5" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Html.jpg" />
-              <img alt="CSS3" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/css.jpg" />
-              <img alt="JavaScript" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/js.jpg" />
-              <img alt="Java" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/java.jpg" />
-              <img alt="GitHub" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Github.jpg" />
-              <img alt="Git" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/git-K6RyaU-h.png" />
+            <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-6">
+              {[
+                { name: "React", src: "./assets/React.jpg" },
+                { name: "Next.js", src: "./assets/Nestjs.jpg" },
+                { name: "TypeScript", src: "./assets/Typescript.jpg" },
+                { name: "JavaScript", src: "./assets/js.jpg" },
+                { name: "Node.js", src: "./assets/nodejs.svg" },
+                { name: "Python", src: "./assets/python.svg" },
+                { name: "Tailwind CSS", src: "./assets/Tailwind.jpg" },
+                { name: "HTML5", src: "./assets/Html.jpg" },
+                { name: "CSS3", src: "./assets/css.jpg" },
+                { name: "PHP", src: "./assets/php.jpg" },
+                { name: "Java", src: "./assets/java.jpg" },
+                { name: "PostgreSQL", src: "./assets/postgresql.svg" },
+                { name: "MariaDB", src: "./assets/mariadb.svg" },
+                { name: "MySQL", src: "./assets/MySql.jpg" },
+                { name: "Supabase", src: "./assets/supabase.svg" },
+                { name: "Prisma", src: "./assets/prisma.svg" },
+                { name: "OpenAI", src: "./assets/openai.svg" },
+                { name: "Gemini", src: "./assets/gemini.svg" },
+                { name: "GitHub Actions", src: "./assets/githubactions.svg" },
+                { name: "GitHub", src: "./assets/Github.jpg" },
+                { name: "Git", src: "./assets/git-K6RyaU-h.png" },
+                { name: "Postman", src: "./assets/postman.svg" },
+                { name: "Vercel", src: "./assets/vercel.svg" },
+              ].map((icon) => (
+                <img
+                  key={icon.name}
+                  alt={icon.name}
+                  title={icon.name}
+                  loading="lazy"
+                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px] object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2.5 md:p-3"
+                  src={icon.src}
+                />
+              ))}
             </div>
           </div>
         </div>
