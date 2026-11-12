@@ -25,13 +25,13 @@ const projectsTimeline = [
     number: "02",
     role: "GrindLog",
     company: "AI-Powered Fitness & Nutrition Platform",
-    period: "Next.js 15, React 19, Gemini 2.0, Supabase",
+    period: "Next.js 15, React 19, OpenAI, Gemini 2.0, Supabase",
     details: [
-      "Engineered an end-to-end fitness OS and PWA featuring adaptive 7-day workout split generation, live set-by-set execution, USDA macro logging, and computer-vision body scan assessments.",
+      "Engineered an end-to-end fitness OS and PWA featuring OpenAI-powered adaptive 7-day workout split generation, live set-by-set execution, USDA macro logging, and computer-vision body scan assessments.",
       "Architected a zero-waterfall Next.js 15 RSC data layer using parallel Promise.all batching and Suspense streaming skeletons to achieve sub-50ms state resolution and 0ms optimistic tab switching.",
       "Integrated Razorpay billing with HMAC-SHA256 verified webhooks, Firebase Cloud Messaging (FCM) automated push notifications via Vercel Cron, and Supabase Row Level Security (RLS)."
     ],
-    tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase", "Gemini 2.0 Flash", "Razorpay", "PWA"],
+    tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI API", "Gemini 2.0 Flash", "Razorpay", "PWA"],
     liveUrl: "https://grindlog.in",
     github: "https://github.com/akashit2408-cloud",
     className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] md:-rotate-2",
@@ -369,7 +369,7 @@ function App() {
               Junior Full-Stack / Web Developer
             </h2>
             <p className="text-luxury-ivory/85 text-xs sm:text-sm md:text-base font-semibold mb-6 max-w-xl drop-shadow-md leading-relaxed">
-              Results-driven Full-Stack Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications using React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms.
+              Results-driven Full-Stack Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications using React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (OpenAI, Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms.
             </p>
             <div className="flex flex-row flex-wrap items-center gap-2.5 md:gap-3 w-full">
               <a href="#projects" className="px-5 sm:px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">View Projects</a>
@@ -449,7 +449,7 @@ function App() {
           <div data-aos="fade-up" data-aos-delay="200" className="flex-1 text-luxury-ivory mt-8 md:mt-0 relative z-20 aos-init">
             <h2 className="text-4xl md:text-5xl font-black text-luxury-ivory mb-4">Hello!</h2>
             <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Full-Stack / Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (OpenAI, Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
             <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure RESTful APIs (RBAC, Razorpay Webhooks), automating CI/CD workflows, tuning database queries for sub-2-second page loads, and delivering seamless mobile-first user experiences.</p>
             <div className="flex flex-wrap items-center gap-4 md:gap-5 mt-6">
               <img alt="React" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/React.jpg" />
