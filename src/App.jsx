@@ -16,8 +16,8 @@ const projectsTimeline = [
     tags: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "SEO Architecture"],
     liveUrl: "https://theatom.biz",
     github: null,
-    className: "md:absolute md:top-[10px] md:right-[2%] lg:right-[5%] rotate-1 md:rotate-2",
-    aosType: "fade-left",
+    className: "md:absolute md:top-[10px] md:right-[2%] lg:right-[5%] md:rotate-2",
+    aosType: "fade-up",
     aosDelay: "100",
     theme: "light"
   },
@@ -34,8 +34,8 @@ const projectsTimeline = [
     tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase", "Gemini 2.0 Flash", "Razorpay", "PWA"],
     liveUrl: "https://grindlog.in",
     github: "https://github.com/akashit2408-cloud",
-    className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] -rotate-1 md:-rotate-2",
-    aosType: "fade-right",
+    className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] md:-rotate-2",
+    aosType: "fade-up",
     aosDelay: "200",
     theme: "dark"
   },
@@ -52,8 +52,8 @@ const projectsTimeline = [
     tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Prisma ORM", "MariaDB", "Razorpay", "PWA"],
     liveUrl: "https://darksyndicategw.com",
     github: "https://github.com/akashit2408-cloud",
-    className: "md:absolute md:top-[1020px] md:right-[2%] lg:right-[8%] rotate-1 md:rotate-3",
-    aosType: "fade-left",
+    className: "md:absolute md:top-[1020px] md:right-[2%] lg:right-[8%] md:rotate-3",
+    aosType: "fade-up",
     aosDelay: "300",
     theme: "light"
   }
@@ -78,16 +78,13 @@ const skillsCategories = [
   {
     title: "Backend & APIs",
     skills: [
+      "Node.js",
       "Next.js API Routes",
-      "Prisma ORM",
       "RESTful APIs",
-      "Razorpay API",
-      "Gemini 2.0 Flash AI",
-      "Firebase (FCM)",
       "Supabase Auth (JWT)",
-      "RBAC",
       "PHP",
-      "Core Java"
+      "Core Java",
+      "Python (Basics)"
     ]
   },
   {
@@ -104,16 +101,15 @@ const skillsCategories = [
     ]
   },
   {
-    title: "Tools & AI Agents",
+    title: "Tools & CI/CD",
     skills: [
-      "Coding Agents (Antigravity, Claude, Codex)",
       "Git",
       "GitHub",
+      "GitHub Actions (CI/CD)",
+      "Coding Agents (Antigravity, Claude, Codex)",
       "VS Code",
       "Postman",
-      "Vercel Deployment",
-      "Agile / Scrum",
-      "Performance & SEO"
+      "Vercel"
     ]
   }
 ];
@@ -138,7 +134,7 @@ const TimelineCard = ({ exp, pathLength, containerRef }) => {
   });
 
   return (
-    <div ref={d} data-aos={exp.aosType} data-aos-delay={exp.aosDelay} className={`w-80 sm:w-96 lg:w-[420px] mx-auto mb-8 md:mb-0 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${f ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'bg-[#1a1a1a] border border-white/5 shadow-lg'}`}>
+    <div ref={d} data-aos={exp.aosType} data-aos-delay={exp.aosDelay} className={`w-full max-w-[360px] sm:max-w-[400px] lg:w-[420px] mx-auto mb-8 md:mb-0 rounded-[2rem] p-2 relative flex flex-col items-center hover:scale-[1.01] transition-all duration-700 z-10 ${exp.className} ${f ? 'bg-luxury-card border border-luxury-gold shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'bg-[#1a1a1a] border border-white/5 shadow-lg'}`}>
       <div className={`w-5 h-5 bg-gradient-to-br from-gray-300 to-gray-100 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] absolute top-4 border border-gray-300 z-10 flex items-center justify-center`}>
         <div className={`w-2 h-2 rounded-full ${f ? 'bg-luxury-gold' : 'bg-gray-600'}`}></div>
       </div>
@@ -239,14 +235,19 @@ function App() {
   const videoRef = useRef(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleVideo = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
+  const toggleVideo = async () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      try {
+        await videoRef.current.play();
+        setIsVideoPlaying(true);
+      } catch (err) {
+        console.error("Video playback failed:", err);
+        setIsVideoPlaying(false);
       }
-      setIsVideoPlaying(!isVideoPlaying);
+    } else {
+      videoRef.current.pause();
+      setIsVideoPlaying(false);
     }
   };
   const [loading, setLoading] = useState(true);
@@ -267,16 +268,17 @@ function App() {
   const contactY = useTransform(contactScrollYProgress, [0, 1], ["-20%", "30%"]);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false });
+    AOS.init({ duration: 900, once: true });
     
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+      setTimeout(() => AOS.refresh(), 100);
+    }, 1100);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -285,19 +287,19 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#050505] min-h-screen">
+    <div className="bg-[#050505] min-h-screen overflow-x-hidden">
       <AnimatePresence>
         {loading && (
           <motion.div
             key="preloader"
             initial={{ y: 0 }}
             exit={{ y: "-100%" }}
-            transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 w-full h-screen bg-luxury-beige z-[100000] flex items-center justify-center"
+            transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 w-full h-[100dvh] bg-luxury-beige z-[100000] flex items-center justify-center pointer-events-none"
           >
             <motion.div
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
               className="relative text-5xl md:text-7xl font-black tracking-tighter uppercase"
             >
               <div className="text-black/10">AKASH B</div>
@@ -305,7 +307,7 @@ function App() {
                 className="absolute top-0 left-0 text-luxury-bg overflow-hidden whitespace-nowrap"
                 initial={{ clipPath: "inset(100% 0 0 0)" }}
                 animate={{ clipPath: "inset(0% 0 0 0)" }}
-                transition={{ duration: 1.6, ease: "easeInOut", delay: 0.2 }}
+                transition={{ duration: 0.9, ease: "easeInOut", delay: 0.1 }}
               >
                 AKASH B
               </motion.div>
@@ -314,7 +316,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#050505]/80 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#050505]/85 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-5 md:py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <a href="#" className={`text-luxury-ivory text-2xl font-black tracking-tight whitespace-nowrap uppercase transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>AKASH B</a>
@@ -332,12 +334,12 @@ function App() {
             <a href="#contact" className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-luxury-ivory font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md whitespace-nowrap">Hire Me</a>
           </div>
           <div className="lg:hidden flex items-center">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-luxury-ivory focus:outline-none p-2" aria-label="Toggle Navigation Menu">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-luxury-ivory focus:outline-none p-2" aria-label="Toggle Navigation Menu" aria-expanded={isMenuOpen}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
           </div>
         </div>
-        <div className={`lg:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-96 opacity-100 bg-luxury-bg/95 backdrop-blur-md pb-6 pt-2 border-b border-white/10" : "max-h-0 opacity-0"}`}>
+        <div className={`lg:hidden absolute top-full left-0 w-full transition-all duration-300 ${isMenuOpen ? "max-h-[85dvh] opacity-100 overflow-y-auto bg-luxury-bg/95 backdrop-blur-md pb-6 pt-2 border-b border-white/10" : "max-h-0 opacity-0 overflow-hidden pointer-events-none"}`}>
           <div className="flex flex-col px-6 space-y-4">
             <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-luxury-ivory hover:text-luxury-gold font-bold text-lg border-b border-white/10 pb-2 transition-colors">Home</a>
             <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-luxury-ivory hover:text-luxury-gold font-bold text-lg border-b border-white/10 pb-2 transition-colors">About</a>
@@ -353,28 +355,29 @@ function App() {
         </div>
       </nav>
 
-      <section id="home" className="relative w-full h-screen overflow-hidden bg-luxury-bg">
-        <video loop playsInline ref={videoRef} className="absolute top-0 left-0 w-full h-full object-cover z-0">
+      <section id="home" className="relative w-full min-h-[100dvh] md:h-screen overflow-hidden bg-luxury-bg flex items-end md:block">
+        <video loop playsInline preload="metadata" ref={videoRef} onEnded={() => setIsVideoPlaying(false)} className="absolute top-0 left-0 w-full h-full object-cover z-0">
           <source src="./assets/myselfvideo.mp4" type="video/mp4" />Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 z-20 pt-28 pb-10 px-6 md:pt-0 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-start md:items-end text-left w-full overflow-y-auto overflow-x-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/45 to-[#050505]/30 z-10 pointer-events-none"></div>
+        <div className="relative z-20 pt-28 pb-12 px-6 md:absolute md:inset-0 md:pt-0 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-start md:items-end text-left w-full">
           <div className="flex flex-col items-start text-left max-w-2xl w-full">
-            <h1 data-aos="fade-up" className="text-luxury-ivory text-3xl sm:text-4xl md:text-6xl font-black mb-2 tracking-tight">
+            <h1 className="text-luxury-ivory text-3xl sm:text-4xl md:text-6xl font-black mb-2 tracking-tight">
               Hi, I’m <br /> <span className="text-luxury-ivory uppercase">AKASH B</span>
             </h1>
-            <h2 data-aos="fade-up" data-aos-delay="100" className="text-luxury-gold text-base sm:text-lg md:text-2xl font-black mb-3 tracking-wider uppercase">
+            <h2 className="text-luxury-gold text-base sm:text-lg md:text-2xl font-black mb-3 tracking-wider uppercase">
               Junior Full-Stack / Web Developer
             </h2>
-            <p data-aos="fade-up" data-aos-delay="200" className="text-luxury-ivory/80 text-xs sm:text-sm md:text-base font-semibold mb-6 max-w-xl drop-shadow-md leading-relaxed">
-              Results-driven Full-Stack Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications using React 19, Next.js 15/16 (App Router, RSC), TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms.
+            <p className="text-luxury-ivory/85 text-xs sm:text-sm md:text-base font-semibold mb-6 max-w-xl drop-shadow-md leading-relaxed">
+              Results-driven Full-Stack Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications using React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms.
             </p>
-            <div data-aos="fade-up" data-aos-delay="400" className="flex flex-row flex-wrap items-center gap-2 md:gap-3 w-full">
-              <a href="#projects" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">View Projects</a>
-              <a href="#contact" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-bg/40 border border-white text-luxury-ivory font-bold hover:bg-luxury-bg/60 transition-all duration-300 backdrop-blur-md">Contact Me</a>
-              <a href="./assets/Akash_B_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-white font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)]">Preview Resume</a>
+            <div className="flex flex-row flex-wrap items-center gap-2.5 md:gap-3 w-full">
+              <a href="#projects" className="px-5 sm:px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">View Projects</a>
+              <a href="#contact" className="px-5 sm:px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-bg/40 border border-white text-luxury-ivory font-bold hover:bg-luxury-bg/60 transition-all duration-300 backdrop-blur-md">Contact Me</a>
+              <a href="./assets/Akash_B_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-5 sm:px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-gold border border-luxury-gold text-white font-bold hover:bg-luxury-beige transition-all duration-300 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)]">Preview Resume</a>
             </div>
           </div>
-          <div data-aos="zoom-in" data-aos-delay="600" onClick={toggleVideo} className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto">
+          <div onClick={toggleVideo} className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto">
             <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-luxury-bg/20 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#67408a] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(103,64,138,0.6)]">
               {isVideoPlaying ? (
                 <svg className="w-5 h-5 md:w-8 md:h-8 text-luxury-ivory ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
@@ -443,11 +446,11 @@ function App() {
               </div>
             </div>
           </div>
-          <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-luxury-ivory mt-8 md:mt-0 relative z-20 aos-init">
+          <div data-aos="fade-up" data-aos-delay="200" className="flex-1 text-luxury-ivory mt-8 md:mt-0 relative z-20 aos-init">
             <h2 className="text-4xl md:text-5xl font-black text-luxury-ivory mb-4">Hello!</h2>
             <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Full-Stack / Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure RESTful APIs (RBAC, Razorpay Webhooks), tuning database queries for sub-2-second page loads, and delivering seamless mobile-first user experiences.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure RESTful APIs (RBAC, Razorpay Webhooks), automating CI/CD workflows, tuning database queries for sub-2-second page loads, and delivering seamless mobile-first user experiences.</p>
             <div className="flex flex-wrap items-center gap-4 md:gap-5 mt-6">
               <img alt="React" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/React.jpg" />
               <img alt="Next.js" className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-lg bg-white/10 rounded-2xl p-2 md:p-3" src="./assets/Nestjs.jpg" />
