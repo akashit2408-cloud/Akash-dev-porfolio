@@ -8,13 +8,13 @@ const projectsTimeline = [
     number: "01",
     role: "GrindLog",
     company: "AI-Powered Fitness & Nutrition Platform",
-    period: "Next.js 15, React 19, OpenAI, Gemini 2.0, Supabase",
+    period: "Next.js, React, OpenAI, Gemini API, Supabase",
     details: [
-      "Engineered an end-to-end fitness OS and PWA featuring OpenAI-powered adaptive 7-day workout split generation, live set-by-set execution, USDA macro logging, and computer-vision body scan assessments.",
-      "Architected a zero-waterfall Next.js 15 RSC data layer using parallel Promise.all batching and Suspense streaming skeletons to achieve sub-50ms state resolution and instant optimistic UI tab switching.",
-      "Integrated Razorpay billing with HMAC-SHA256 verified webhooks, Firebase Cloud Messaging (FCM) automated push notifications via Vercel Cron, and Supabase Row Level Security (RLS)."
+      "Built an end-to-end fitness OS and PWA integrating OpenAI and Gemini Vision APIs to analyze user meal logs and generate personalized workout recommendations.",
+      "Built a fast, responsive user interface using Next.js App Router, React Suspense loading skeletons, and optimistic UI for instant workout set logging.",
+      "Implemented Razorpay subscription payments with webhook verification, automated push notifications via Vercel Cron, and protected user data using Supabase Row Level Security (RLS)."
     ],
-    tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI API", "Gemini 2.0 Flash", "Razorpay", "PWA"],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI API", "Gemini API", "Razorpay", "PWA"],
     liveUrl: "https://grindlog.in",
     github: null,
     className: "md:absolute md:top-[10px] md:right-[2%] lg:right-[5%] md:rotate-2",
@@ -26,13 +26,13 @@ const projectsTimeline = [
     number: "02",
     role: "Dark Syndicate",
     company: "Gaming Arena & Venue Operations Platform",
-    period: "Next.js 16, React 19, Prisma, MariaDB",
+    period: "Next.js, React, Prisma ORM, MySQL",
     details: [
-      "Engineered an end-to-end esports arena & lounge operations platform managing real-time station inventory, online slot reservations, front-desk walk-in POS, and dynamic pricing across PlayStation 5 stations and snooker tables.",
-      "Built an active floor-timer and session engine supporting live duration extensions, extra player add-ons, audio session expiry alerts, and atomic multi-mode split payment processing (Cash + UPI) with Razorpay integration.",
-      "Architected a portal-scoped Progressive Web App (PWA) with offline resilience, Web Push notifications, and secure multi-tier RBAC (Admin, Staff, Customer), complete with financial audit ledgers and analytics exportable to CSV."
+      "Engineered an esports arena & lounge operations platform managing real-time station inventory, online slot reservations, front-desk walk-in POS, and dynamic pricing across PlayStation 5 stations and snooker tables.",
+      "Developed an active station countdown timer with audio alerts and built a POS billing system supporting both Cash and UPI payments via Razorpay.",
+      "Implemented role-based access for Admin, Staff, and Customers, PWA support for mobile POS use, and CSV reporting for daily sales tracking."
     ],
-    tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Prisma ORM", "MariaDB", "Razorpay", "PWA"],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma ORM", "MySQL", "Razorpay", "PWA"],
     liveUrl: "https://darksyndicategw.com",
     github: null,
     className: "md:absolute md:top-[480px] md:left-[2%] lg:left-[5%] md:-rotate-2",
@@ -47,7 +47,7 @@ const projectsTimeline = [
     period: "HTML5, CSS3, JS, PHP, MySQL",
     details: [
       "Engineered corporate digital presence from scratch, implementing responsive semantic UI and mobile-first ergonomics.",
-      "Optimized asset loading, image compression, and structured meta-tags to reduce payload size and improve SEO discoverability."
+      "Optimized asset delivery, image compression, and structured meta-tags to reduce payload size and improve search discoverability."
     ],
     tags: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "SEO Architecture"],
     liveUrl: "https://theatom.biz",
@@ -63,8 +63,8 @@ const skillsCategories = [
   {
     title: "Frontend",
     skills: [
-      "React 19",
-      "Next.js 15/16 (App Router, RSC, SSR/SSG)",
+      "React",
+      "Next.js (App Router)",
       "TypeScript",
       "JavaScript (ES6+)",
       "Tailwind CSS",
@@ -82,31 +82,25 @@ const skillsCategories = [
       "Next.js API Routes",
       "RESTful APIs",
       "Supabase Auth (JWT)",
-      "PHP",
-      "Core Java",
-      "Python (Basics)"
+      "PHP"
     ]
   },
   {
     title: "Databases & Cloud",
     skills: [
       "PostgreSQL",
-      "MariaDB",
       "MySQL",
       "Supabase (Database, Auth, Storage, RLS)",
-      "Relational Schema Design",
-      "Query Optimization",
-      "Vercel Cron",
-      "XAMPP"
+      "Relational Database Design",
+      "Vercel"
     ]
   },
   {
-    title: "Tools & CI/CD",
+    title: "Tools & Workflow",
     skills: [
       "Git",
       "GitHub",
-      "GitHub Actions (CI/CD)",
-      "Coding Agents (Antigravity, Claude, Codex)",
+      "GitHub Actions",
       "VS Code",
       "Postman",
       "Vercel"
@@ -369,7 +363,7 @@ function App() {
               Junior Full-Stack / Web Developer
             </h2>
             <p className="text-luxury-ivory/85 text-xs sm:text-sm md:text-base font-semibold mb-6 max-w-xl drop-shadow-md leading-relaxed">
-              Results-driven Full-Stack Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications using React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (OpenAI, Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms.
+              Full-Stack Web Developer with hands-on professional experience building and shipping responsive, modern web applications using Next.js, React, TypeScript, Tailwind CSS, and Supabase/PostgreSQL. Skilled at integrating third-party APIs (Razorpay, AI services), developing RESTful API endpoints, and delivering functional end-to-end web applications for real-world businesses.
             </p>
             <div className="flex flex-row flex-wrap items-center gap-2.5 md:gap-3 w-full">
               <a href="#projects" className="px-5 sm:px-6 py-3 text-xs md:text-sm rounded-full bg-luxury-ivory text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">View Projects</a>
@@ -448,9 +442,9 @@ function App() {
           </div>
           <div data-aos="fade-up" data-aos-delay="200" className="flex-1 text-luxury-ivory mt-8 md:mt-0 relative z-20 aos-init">
             <h2 className="text-4xl md:text-5xl font-black text-luxury-ivory mb-4">Hello!</h2>
-            <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Full-Stack / Web Developer with 1.5+ years of hands-on professional experience engineering responsive, high-performance web applications.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including React 19, Next.js 15/16 (App Router, RSC), Node.js, TypeScript, Tailwind CSS, Prisma ORM, Supabase/PostgreSQL, MariaDB/MySQL, and AI APIs (OpenAI, Gemini 2.0). Proven expertise translating complex business workflows into scalable production platforms—including commercial corporate portals, AI health platforms, and venue POS systems.</p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure RESTful APIs (RBAC, Razorpay Webhooks), automating CI/CD workflows, tuning database queries for fast page loads, and delivering seamless mobile-first user experiences.</p>
+            <p className="text-lg font-bold mb-6 leading-relaxed max-w-3xl text-luxury-taupe">I am <span className="text-luxury-gold text-xl font-black mx-1 tracking-wide uppercase">AKASH B</span>, a Junior Full-Stack / Web Developer with hands-on professional experience building and shipping responsive, modern web applications.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-6 max-w-3xl text-luxury-taupe">I specialize in full-stack web development with modern technologies including Next.js, React, TypeScript, Tailwind CSS, Node.js, and Supabase/PostgreSQL. Skilled at integrating third-party APIs (Razorpay, OpenAI, Gemini), developing RESTful API endpoints, and delivering functional end-to-end web applications for real-world businesses.</p>
+            <p className="text-sm md:text-base font-semibold leading-relaxed mb-10 max-w-3xl text-luxury-taupe">Adept at building secure API integrations, automating workflows, and delivering seamless mobile-first user experiences across viewports.</p>
             <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-6">
               {[
                 { name: "React", src: "./assets/React.jpg" },
@@ -615,7 +609,7 @@ function App() {
 
               <div className="flex flex-wrap items-center gap-2 mb-8">
                 <span className="text-xs font-bold text-luxury-taupe uppercase tracking-wider mr-1">Tech Stack:</span>
-                {["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "PHP", "MySQL", "PostgreSQL", "REST APIs", "Git"].map((tech) => (
+                {["Next.js", "React", "TypeScript", "Tailwind CSS", "PHP", "MySQL", "PostgreSQL", "REST APIs", "Git"].map((tech) => (
                   <span key={tech} className="text-[11px] font-semibold px-3 py-1 bg-white/5 border border-white/10 rounded-full text-luxury-gold">
                     {tech}
                   </span>
@@ -627,23 +621,19 @@ function App() {
                 <ul className="text-luxury-ivory/85 space-y-4 font-medium text-sm md:text-base">
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Architected and delivered responsive full-stack applications with <strong className="text-luxury-ivory">Next.js 15, React 19, PHP, and MySQL</strong>, improving multi-device responsiveness and user engagement across client production deployments.</span>
+                    <span>Built and deployed responsive client websites and web applications using <strong className="text-luxury-ivory">Next.js, React, and Tailwind CSS</strong>.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Engineered reusable component systems using <strong className="text-luxury-ivory">TypeScript and Tailwind CSS</strong>, optimizing Core Web Vitals, bundle size, and initial page load speed across desktop and mobile viewports.</span>
+                    <span>Developed REST API endpoints and connected relational databases (<strong className="text-luxury-ivory">MySQL, PostgreSQL</strong>) to handle dynamic client data.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Designed and documented secure <strong className="text-luxury-ivory">RESTful APIs</strong> implementing Role-Based Access Control (RBAC) and Supabase/JWT authentication to safeguard internal and client-facing endpoints.</span>
+                    <span>Integrated <strong className="text-luxury-ivory">Supabase storage</strong> for image/media uploads and built automated WhatsApp notification links to streamline client workflows.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Optimized relational database schemas and indexed SQL queries in <strong className="text-luxury-ivory">MySQL and PostgreSQL</strong>, improving query execution efficiency and maintaining strict referential data integrity.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-luxury-gold mr-3 mt-1 text-lg leading-none">•</span>
-                    <span>Integrated third-party cloud services including <strong className="text-luxury-ivory">Supabase storage</strong> and automated WhatsApp sharing workflows, streamlining client notifications and operational follow-ups.</span>
+                    <span>Collaborated on frontend UI components, ensuring smooth mobile-first responsiveness across all viewports.</span>
                   </li>
                 </ul>
               </div>
